@@ -6,60 +6,119 @@ import {
 
 export const vars = createGlobalTheme(":root", {
   colors: {
-    grey: {
-      50: "hsl(265, 55%, 96%)",
-      100: "hsl(265, 19%, 88%)",
-      200: "hsl(265, 7%, 70%)",
-      300: "hsl(265, 6%, 66%)",
-      400: "hsl(265, 4%, 57%)",
-      500: "hsl(265, 3%, 53%)",
-      600: "hsl(265, 4%, 42%)",
-      700: "hsl(265, 4%, 31%)",
-      800: "hsl(276, 5%, 20%)",
-      900: "hsl(280, 5%, 13%)",
-    },
     primary: {
-      50: "#c8b3ce",
-      100: "#a07aaa",
-      200: "#884c97",
-      300: "#843897",
-      400: "#732392",
-      500: "#5a097a",
-      600: "#480264",
-      700: "#3d0264",
+      100: "#06B6D4",
+      200: "#E0F7FA",
     },
-    success: {
-      100: "#a2f0bc",
-      500: "#12bd4b",
-    },
-    error: {
-      100: "#f1acc9",
-      500: "#a10c4a",
+    neutral: {
+      100: "#94A3B8",
+      200: "#0F172A",
     },
   },
   sizes: {
-    1: "0.25rem",
-    2: "0.5rem",
-    3: "0.75rem",
-    4: "1rem",
-    5: "1.25rem",
-    6: "1.5rem",
-    8: "2rem",
-    16: "4rem",
-    20: "5rem",
-    40: "10rem",
+    1: "1.6rem",
+    2: "1.8rem",
+    3: "2.2rem",
+    4: "3.2rem",
+    5: "3.6rem",
+    6: "4.8rem",
   },
 });
 
-globalStyle("*", {
-  boxSizing: "border-box",
+
+globalStyle('*', {
+  boxSizing: 'border-box',
+  wordBreak: 'keep-all',
+  margin: 0,
+  padding: 0,
+  border: 0,
+  listStyle: 'none',
 });
 
-globalStyle("body", {
+globalStyle('html', {
+  overflowY: 'scroll',
+  fontSize: '62.5%',
+  background: '#fff',
+  fontFamily: 'Pretendard',
+});
+
+globalStyle('body', {
+  color: vars.colors.neutral[200],
   margin: 0,
-  backgroundColor: vars.colors.grey[50],
-  color: "#252525",
-  fontFamily: '"BookkMyungjo-Bd"',
+  padding: 0,
+  fontSize: vars.sizes[2],
+  background: '#fff',
+});
+
+globalStyle('h1, h2, h3, h4, h5, h6', {
+  fontSize: '1em',
+});
+
+globalStyle('article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section', {
+  display: 'block',
+});
+
+globalStyle('legend', {
+  position: 'absolute',
+  fontSize: 0,
+  lineHeight: 0,
+  textIndent: '-9999em',
+  overflow: 'hidden',
+});
+
+globalStyle('label, input, button, select, img', {
+  verticalAlign: 'middle',
+  fontSize: '1em',
+});
+
+globalStyle('input, button', {
+  margin: 0,
+  padding: 0,
+  fontSize: '1em',
+});
+
+globalStyle('input[type="submit"], button', {
+  cursor: 'pointer',
+});
+
+globalStyle('table', {
+  borderCollapse: 'collapse',
+  borderSpacing: '0 5px',
+});
+
+globalStyle('textarea, select', {
+  fontSize: '1em',
+});
+
+globalStyle('select', {
+  margin: 0,
+});
+
+globalStyle('p', {
+  margin: 0,
+  padding: 0,
+  wordBreak: 'break-all',
+});
+
+globalStyle('hr', {
+  display: 'none',
+});
+
+globalStyle('pre', {
+  overflowX: 'scroll',
+  fontSize: '1.1em',
+});
+
+globalStyle('a', {
+  color: '#000',
+  textDecoration: 'none',
+});
+
+
+globalStyle('input[type="text"], input[type="password"], textarea', {
+  transition: 'all 0.30s ease-in-out',
+  outline: 'none',
+  border: 'none',
 });
 
 globalFontFace("BookkMyungjo-Bd", {
