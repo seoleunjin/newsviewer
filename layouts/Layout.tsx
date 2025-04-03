@@ -1,28 +1,45 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+import "@/styles/globals.css";
+import * as styles from "./layout.css";
+
+import ThemeProvider from '@/context/ThemeProvider';
+import DarkModeBtn from "@/components/Buttons/DarkModeBtn";
+
 
 type HeaderProps = {
   children: React.ReactNode;
 };
 
-
-const Header: React.FC<HeaderProps> = ({ children }) => {
+const Layout: React.FC<HeaderProps> = ({ children }) => {
   return (
-    <header>
-      <div>
-        <div>
-          <Link href="@/">
-            <h2>News<span>ly</span></h2>
-          </Link>
-          <nav>
-            <Link href="@/">북마크</Link>
-            <button>다크모드</button>
-          </nav>
-        </div>
-      </div>
-      <div>{children}</div>
-    </header>
+    <html>
+      <body>
+        <ThemeProvider>
+        <header className={styles.header}>
+          <div className={styles.width}>
+            <div className={styles.grid}>
+              <Link href="@/">
+                <h2 className={styles.logo}>
+                  News<span className={styles.span}>ly</span>
+                </h2>
+              </Link>
+              <nav className={styles.grid}>
+                <Link href="@/">북마크</Link>
+                <DarkModeBtn />
+              </nav>
+            </div>
+          </div>
+        </header>
+        <div>{children}</div>
+        <footer>
+          <div className={styles.width}></div>
+        </footer>
+      </ThemeProvider>
+      </body>
+      
+    </html>
   );
 };
 
-export default Header;
+export default Layout;
