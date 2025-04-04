@@ -2,14 +2,16 @@ import Link from "next/link";
 import React from "react";
 import "@/styles/globals.css";
 import * as styles from "./layout.css";
-
 import ThemeProvider from '@/context/ThemeProvider';
 import DarkModeBtn from "@/components/Buttons/DarkModeBtn";
+import Image from "next/image";
+import BookmarkIcon from '@/public/images/bookMark.svg'
 
 
 type HeaderProps = {
   children: React.ReactNode;
 };
+
 
 const Layout: React.FC<HeaderProps> = ({ children }) => {
   return (
@@ -25,7 +27,13 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
                 </h2>
               </Link>
               <nav className={styles.grid}>
-                <Link href="@/">북마크</Link>
+                <Image
+                  src={BookmarkIcon}
+                  className={styles.bookmark}
+                  alt="북마크"
+                  width={16}
+                  height={21}
+                />  
                 <DarkModeBtn />
               </nav>
             </div>

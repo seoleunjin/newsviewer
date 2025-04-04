@@ -15,13 +15,25 @@ export const grid = style({
     display:"flex",
     justifyContent: "space-between",
     alignItems:"center",
+    gap:"24px"
 })
 
 export const logo = style({
-    fontSize: vars.sizes[24],
+    fontSize: vars.sizes.FONT_LG,
     color: vars.themeColor.color.mainFontColor,
 })
 
 export const span = style({
     color: vars.colors.primary[100],
+})
+
+export const bookmark = style({
+  color: vars.themeColor.color.mainFontColor,
+  cursor: 'pointer',
+
+  selectors: {
+    '&:hover': {
+      color: vars.colors.primary[200],
+    },
+  },
 })

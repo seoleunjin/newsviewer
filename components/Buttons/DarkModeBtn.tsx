@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const DarkModeBtn = () => {
@@ -14,7 +15,8 @@ const DarkModeBtn = () => {
             <button
                 onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
                 aria-label="DarkModeBtn"
-            >{resolvedTheme === "light" ? "🌞 Light Mode" : "🌙 Dark Mode"}
+            >
+            <Image  src="/images/darkMode.svg" alt="다크모드" width={18} height={21}></Image>
             </button>
         </div>
     );

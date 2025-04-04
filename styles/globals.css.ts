@@ -19,23 +19,35 @@ export const global = createGlobalTheme(":root", {
     },
   },
   sizes: {
-    16: "1.6rem",
-    18: "1.8rem",
-    22: "2.2rem",
-    24: "2.4rem",
-    32: "3.2rem",
-    36: "3.6rem",
-    48: "4.8rem",
+    FONT_SM: "1.6rem",
+    FONT_RE: "1.8rem",
+    FONT_MD: "2.2rem",
+    FONT_LG: "2.4rem",
+    FONT_XL: "3.2rem",
+    FONT_2XL: "3.6rem",
+    FONT_3XL: "4.8rem",
   },
   width: {
     wide: "1440px",
     narrow: "800px",
-  }
+  },
+   mediaQueries:{
+    SCREEN_SM: "screen and (min-width: 640px)",
+    SCREEN_MD: "screen and (min-width: 768px)",
+    SCREEN_LG: "screen and (min-width: 1024px)",
+    SCREEN_XL: "screen and (min-width: 1280px)",
+    SCREEN_2XL: "screen and (min-width: 1530px)",
+    SCREEN_3XL: "screen and (min-width: 1536px)",
+    SCREEN_4XL: "screen and (min-width: 1850px)",
+    SCREEN_5XL: "screen and (min-width: 2000px)",
+    SCREEN_6XL: "screen and (min-width: 2300px)",
+   }
 });
 
 const themeColor = createThemeContract({
   color: {
     mainBackground: null,
+    tabBackground:null,
     mainFontColor: null,
   },
 });
@@ -43,6 +55,7 @@ const themeColor = createThemeContract({
 export const lightTheme = createTheme(themeColor, {
   color: {
     mainBackground: "#fff",
+    tabBackground: "#E0F7FA",
     mainFontColor: "#0F172A",
   },
 });
@@ -50,6 +63,7 @@ export const lightTheme = createTheme(themeColor, {
 export const darkTheme = createTheme(themeColor, {
   color: {
     mainBackground: "#0F172A",
+    tabBackground: "rgba(255, 255, 255, 0.15)",
     mainFontColor: "#fff",
   },
 });
@@ -77,7 +91,7 @@ globalStyle("html", {
 globalStyle('body', {
   background: vars.themeColor.color.mainBackground,
   transition: 'all 0.25s linear',
-  fontSize: vars.sizes[18],
+  fontSize: vars.sizes.FONT_RE,
   letterSpacing: "-0.025em",
   lineHeight: "120%",
 });
