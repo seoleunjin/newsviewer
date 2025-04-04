@@ -10,28 +10,19 @@ const DarkModeBtn = () => {
 
 	if (!mounted) return <div />;
 
-<<<<<<< HEAD
-    return (
-        <div >
-            <button
-                onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-                aria-label="DarkModeBtn"
-            >
-            <Image  src="/images/darkMode.svg" alt="다크모드" width={18} height={21}></Image>
-            </button>
-        </div>
-    );
-=======
 	return (
 		<div>
 			<button
 				onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
 				aria-label="DarkModeBtn">
-				{resolvedTheme === 'light' ? '🌞 Light Mode' : '🌙 Dark Mode'}
+				<Image
+					src="/images/darkMode.svg"
+					alt="다크모드"
+					width={18}
+					height={21}></Image>
 			</button>
 		</div>
 	);
->>>>>>> main
 };
 
 export default DarkModeBtn;
