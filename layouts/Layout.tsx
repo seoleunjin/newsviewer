@@ -6,7 +6,6 @@ import * as styles from "./layout.css";
 import ThemeProvider from '@/context/ThemeProvider';
 import DarkModeBtn from "@/components/Buttons/DarkModeBtn";
 
-
 type HeaderProps = {
   children: React.ReactNode;
 };

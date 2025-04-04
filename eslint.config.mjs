@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
 	{
 		files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
-		ignorePatterns: ['*.css.ts'],
+		ignores: ['*.css.ts'],
 	},
 	...compat.config({
 		extends: [
