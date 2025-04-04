@@ -7,7 +7,6 @@ import DarkModeBtn from "@/components/Buttons/DarkModeBtn";
 import Image from "next/image";
 import BookmarkIcon from '@/public/images/bookMark.svg'
 
-
 type HeaderProps = {
   children: React.ReactNode;
 };

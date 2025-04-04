@@ -3,13 +3,14 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const DarkModeBtn = () => {
-    const [mounted, setMounted] = useState(false);
-    const { resolvedTheme, setTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+	const { resolvedTheme, setTheme } = useTheme();
 
-    useEffect(() => setMounted(true), []);
+	useEffect(() => setMounted(true), []);
 
-    if (!mounted) return <div />;
+	if (!mounted) return <div />;
 
+<<<<<<< HEAD
     return (
         <div >
             <button
@@ -20,6 +21,17 @@ const DarkModeBtn = () => {
             </button>
         </div>
     );
+=======
+	return (
+		<div>
+			<button
+				onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+				aria-label="DarkModeBtn">
+				{resolvedTheme === 'light' ? '🌞 Light Mode' : '🌙 Dark Mode'}
+			</button>
+		</div>
+	);
+>>>>>>> main
 };
 
 export default DarkModeBtn;
