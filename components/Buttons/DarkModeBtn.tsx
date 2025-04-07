@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import DarkModeIcon from '@/public/images/darkMode.svg';
+import * as styles from './darkmodebtn.css';
 
 const DarkModeBtn = () => {
 	const [mounted, setMounted] = useState(false);
@@ -15,11 +16,9 @@ const DarkModeBtn = () => {
 			<button
 				onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
 				aria-label="DarkModeBtn">
-				<Image
-					src="/images/darkMode.svg"
-					alt="다크모드"
-					width={18}
-					height={21}></Image>
+				<DarkModeIcon
+					className={`${styles.modeIcon} ${resolvedTheme === 'dark' ? 'active' : ''}`}
+				/>
 			</button>
 		</div>
 	);

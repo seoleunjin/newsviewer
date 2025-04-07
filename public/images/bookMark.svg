@@ -1,3 +1,10 @@
-<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 19.2726V1.96875C1 1.4485 1.4328 1 2 1H14C14.5672 1 15 1.4485 15 1.96875V19.2726L8.49796 15.5391L8 15.2531L7.50204 15.5391L1 19.2726Z" stroke="#0F172A" stroke-width="2"/>
+<svg width='current' stroke="currentColor" height='current' fill='none'
+ viewBox="0 0 16 21" xmlns="http://www.w3.org/2000/svg">
+<path
+  d="M1 19.2726V1.96875C1 1.4485 1.4328 1 2 1H14C14.5672 1 15 1.4485 15 1.96875V19.2726L8.49796 15.5391L8 15.2531L7.50204 15.5391L1 19.2726Z"
+  stroke="currentColor"
+  stroke-width="2"
+  fill="none"
+/>
+
 </svg>
