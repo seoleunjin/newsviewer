@@ -5,10 +5,20 @@ const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
+	images: {
+		domains: [
+			'cdn.mos.cms.futurecdn.net',
+			'media.zennfs.com',
+			'image.cnbcfm.com',
+			's3.amazonaws.com',
+			'assets2.cbsnewsstatic.com',
+			'cdn.cnn.com',
+		],
+	},
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
-			issuer: /\.[jt]sx?$/,
+			issuer: /\.[ts]sx?$/,
 			use: ['@svgr/webpack'],
 		});
 		return config;

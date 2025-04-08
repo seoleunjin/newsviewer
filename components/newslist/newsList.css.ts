@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/globals.css';
 
+// 뉴스 리스트
 export const listGrid = style({
 	display: 'flex',
 	flexWrap: 'wrap',
@@ -9,7 +10,28 @@ export const listGrid = style({
 });
 
 export const itemGrid = style({
-	width: '31%',
+	width: '31.3%',
+});
+
+export const imageWrap = style({
+	borderRadius: '16px',
+	height: '300px',
+	overflow: 'hidden',
+	position: 'relative',
+	marginBottom: '24px',
+});
+
+export const altName = style({
+	fontSize: vars.sizes.FONT_SM,
+	color: vars.colors.neutral[100],
+	lineHeight: '100%',
+	marginBottom: '12px',
+});
+
+export const altTitle = style({
+	fontSize: vars.sizes.FONT_MD,
+	lineHeight: '130%',
+	fontWeight: '700',
 });
 
 // 더보기 버튼

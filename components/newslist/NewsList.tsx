@@ -4,6 +4,7 @@ import type { Article } from '@/type/NewsType';
 import Image from 'next/image';
 import { useState } from 'react';
 import ItemBookMark from '@/public/images/itemBookMark.svg';
+import NewsTab from './NewsTab';
 
 type NewsListProps = {
 	news: Article[];
@@ -21,37 +22,40 @@ export default function NewsList({ news }: NewsListProps) {
 	return (
 		<div className={theme.sectionPaddingBottom}>
 			<div className={theme.width}>
-				<ul className={styles.listGrid}>
-					{news.slice(0, item).map(article => (
-						<li key={article.url} className={styles.itemGrid}>
-							<div>
-								<Image
-									src={article.urlToImage}
-									alt={article.title}
-									width={400}
-									height={250}
-									style={{ width: '100%' }}
-									unoptimized // 도메인 설정 전엔 이거 필요
-								/>
-							</div>
-							<div>
-								<p>{article.source.name}</p>
-								<h2>{article.title}</h2>
-								<div>
-									<span>{article.publishedAt}</span>
-									{/* <ItemBookMark /> */}
+				<NewsTab></NewsTab>
+				<div>
+					<ul className={styles.listGrid}>
+						{news.slice(0, item).map(article => (
+							<li key={article.url} className={styles.itemGrid}>
+								<div className={styles.imageWrap}>
+									<Image
+										src={article.urlToImage || '/images/noImage.jpg'}
+										alt={article.title}
+										fill
+										style={{ objectFit: 'cover' }}
+										unoptimized
+										priority
+									/>
 								</div>
-							</div>
-						</li>
-					))}
-				</ul>
-				{item < news.length && (
-					<div className={styles.MoreBtnWrap}>
-						<button onClick={addArticle} className={styles.MoreBtn}>
-							더보기
-						</button>
-					</div>
-				)}
+								<div>
+									<p className={styles.altName}>{article.source.name}</p>
+									<h2 className={styles.altTitle}>{article.title}</h2>
+									<div>
+										<span>{article.publishedAt}</span>
+										<ItemBookMark />
+									</div>
+								</div>
+							</li>
+						))}
+					</ul>
+					{item < news.length && (
+						<div className={styles.MoreBtnWrap}>
+							<button onClick={addArticle} className={styles.MoreBtn}>
+								더보기
+							</button>
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);
