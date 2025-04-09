@@ -33,17 +33,17 @@ export const global = createGlobalTheme(':root', {
 		wide: '1440px',
 		narrow: '800px',
 	},
-	mediaQueries: {
-		SCREEN_SM: 'screen and (min-width: 640px)',
-		SCREEN_MD: 'screen and (min-width: 768px)',
-		SCREEN_LG: 'screen and (min-width: 1024px)',
-		SCREEN_XL: 'screen and (min-width: 1280px)',
-		SCREEN_2XL: 'screen and (min-width: 1530px)',
-		SCREEN_3XL: 'screen and (min-width: 1536px)',
-		SCREEN_4XL: 'screen and (min-width: 1850px)',
-		SCREEN_5XL: 'screen and (min-width: 2000px)',
-		SCREEN_6XL: 'screen and (min-width: 2300px)',
-	},
+	// mediaQueries: {
+	// 	SCREEN_SM: 'screen and (min-width: 640px)',
+	// 	SCREEN_MD: 'screen and (min-width: 768px)',
+	// 	SCREEN_LG: 'screen and (min-width: 1024px)',
+	// 	SCREEN_XL: 'screen and (min-width: 1280px)',
+	// 	SCREEN_2XL: 'screen and (min-width: 1530px)',
+	// 	SCREEN_3XL: 'screen and (min-width: 1536px)',
+	// 	SCREEN_4XL: 'screen and (min-width: 1850px)',
+	// 	SCREEN_5XL: 'screen and (min-width: 2000px)',
+	// 	SCREEN_6XL: 'screen and (min-width: 2300px)',
+	// },
 });
 
 const themeColor = createThemeContract({
@@ -103,7 +103,7 @@ globalStyle('body', {
 	fontSize: vars.sizes.FONT_RE,
 	letterSpacing: '-0.025em',
 	lineHeight: '120%',
-	fontWeight: '400',
+	fontWeight: '500',
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6', {
@@ -111,7 +111,7 @@ globalStyle('h1, h2, h3, h4, h5, h6', {
 	fontSize: vars.sizes.FONT_RE,
 	letterSpacing: '-0.025em',
 	lineHeight: '120%',
-	fontWeight: '400',
+	fontWeight: '500',
 });
 
 globalStyle(
@@ -182,10 +182,11 @@ globalStyle('input[type="text"], input[type="password"], textarea', {
 	border: 'none',
 });
 
-globalFontFace('BookkMyungjo-Bd', {
-	src: 'url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2") format("woff2")',
-	fontWeight: '700',
+globalFontFace('Pretendard', {
+	src: "url('/fonts/PretendardVariable.woff2') format('woff2')",
+	fontDisplay: 'swap',
 	fontStyle: 'normal',
+	fontWeight: '45 920',
 });
 
 globalStyle('a', {
@@ -195,7 +196,7 @@ globalStyle('a', {
 
 globalStyle('button', {
 	color: vars.themeColor.color.mainFontColor,
-	fontFamily: 'inherit',
+	fontFamily: 'Pretendard',
 	cursor: 'pointer',
 	background: 'transparent',
 	padding: '0',

@@ -20,6 +20,7 @@ export const grid = style({
 export const logo = style({
 	fontSize: vars.sizes.FONT_LG,
 	fontWeight: '700',
+	lineHeight: '100%',
 });
 
 export const span = style({
@@ -44,10 +45,12 @@ export const footer = style({
 export const flogo = style({
 	fontSize: vars.sizes.FONT_MD,
 	fontWeight: '700',
+	lineHeight: '100%',
 });
 
 export const p = style({
 	fontSize: vars.sizes.FONT_SM,
 	color: vars.colors.neutral[100],
 	marginTop: '16px',
+	lineHeight: '100%',
 });

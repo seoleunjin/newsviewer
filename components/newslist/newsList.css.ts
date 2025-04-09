@@ -15,7 +15,7 @@ export const itemGrid = style({
 
 export const imageWrap = style({
 	borderRadius: '16px',
-	height: '300px',
+	height: '200px',
 	overflow: 'hidden',
 	position: 'relative',
 	marginBottom: '24px',
@@ -32,6 +32,40 @@ export const altTitle = style({
 	fontSize: vars.sizes.FONT_MD,
 	lineHeight: '130%',
 	fontWeight: '700',
+	overflow: 'hidden',
+	textOverflow: 'ellipsis',
+	display: '-webkit-box',
+	WebkitLineClamp: 2,
+	WebkitBoxOrient: 'vertical',
+});
+
+export const newsMeta = style({
+	display: 'flex',
+	justifyContent: 'space-between',
+	alignItems: 'center',
+	marginTop: '24px',
+});
+
+export const newsMetaDay = style({
+	fontSize: vars.sizes.FONT_SM,
+	color: vars.colors.neutral[100],
+	lineHeight: '100%',
+});
+
+export const newsMetaBtn = style({
+	color: vars.colors.neutral[100],
+	transition: 'all 0.2s ease-in',
+
+	selectors: {
+		'&:hover': {
+			color: vars.colors.primary[200],
+		},
+	},
+});
+
+export const newsMetaBtnActive = style({
+	color: vars.colors.primary[200],
+	transition: 'all 0.2s ease-in',
 });
 
 // 더보기 버튼

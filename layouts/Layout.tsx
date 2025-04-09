@@ -17,18 +17,20 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 			<header className={styles.header}>
 				<div className={theme.width}>
 					<div className={styles.grid}>
-						<Link href="@/">
+						<Link href="/">
 							<h2 className={styles.logo}>
 								News<span className={styles.span}>ly</span>
 							</h2>
 						</Link>
 						<nav className={styles.grid}>
-							<BookmarkIcon
-								className={styles.bookmark}
-								color="transparent"
-								width={16}
-								height={21}
-							/>
+							<Link href="/bookMark">
+								<BookmarkIcon
+									className={styles.bookmark}
+									color="transparent"
+									width={16}
+									height={21}
+								/>
+							</Link>
 							<DarkModeBtn />
 						</nav>
 					</div>
