@@ -76,7 +76,7 @@ export default function NewsList({ news, category }: NewsListProps) {
 							<div>
 								<p className={styles.altName}>{article.source.name}</p>
 								<Link href={`/newsItem/${article.idx}?category=${category}`}>
-									<h2 className={styles.altTitle}>{article.title}</h2>
+									<h2 className={styles.altTitle}>{article.title}##</h2>
 								</Link>
 								<div className={styles.newsMeta}>
 									<span className={styles.newsMetaDay}>
