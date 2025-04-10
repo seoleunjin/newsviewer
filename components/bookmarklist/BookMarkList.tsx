@@ -25,7 +25,8 @@ export default function BookMarkList() {
 					<li key={bookMarkItem.url} className={styles.itemGrid}>
 						<div className={styles.contextWrap}>
 							<p className={styles.altName}>{bookMarkItem.source.name}</p>
-							<Link href={bookMarkItem.url} target="_blank">
+							<Link
+								href={`/newsItem/${bookMarkItem.idx}?category=${bookMarkItem.category}`}>
 								<h2 className={styles.altTitle}>{bookMarkItem.title}</h2>
 							</Link>
 							<span className={styles.newsMetaDay}>

@@ -23,7 +23,7 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 							</h2>
 						</Link>
 						<nav className={styles.grid}>
-							<Link href="/bookMark">
+							<Link href="/bookmark">
 								<BookmarkIcon
 									className={styles.bookmark}
 									color="transparent"

@@ -12,11 +12,13 @@ export type Article = {
 	urlToImage: string;
 	publishedAt: string;
 	content: string;
-	id?: number;
+	idx: string;
+	category: string;
 };
 
 export type NewsData = {
 	status: string;
 	totalResults: number;
 	articles: Article[];
+	category: string;
 };

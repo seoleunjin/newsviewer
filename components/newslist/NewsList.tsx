@@ -10,9 +10,10 @@ import dayjs from 'dayjs';
 
 type NewsListProps = {
 	news: Article[];
+	category: string;
 };
 
-export default function NewsList({ news }: NewsListProps) {
+export default function NewsList({ news, category }: NewsListProps) {
 	const [bookMarkList, setBookMarkList] = useState<Article[]>([]);
 
 	// 북마크
@@ -32,17 +33,20 @@ export default function NewsList({ news }: NewsListProps) {
 	const handleBookmark = (article: Article) => {
 		let updated;
 
+		// category 값 추가해서 북마크 저장
+		const articleWithCategory = { ...article, category };
+
 		if (bookmarkDup(article)) {
 			updated = bookMarkList.filter(item => item.url !== article.url);
 			alert('북마크를 취소했습니다.');
 		} else {
-			updated = [...bookMarkList, article];
+			updated = [...bookMarkList, articleWithCategory];
 			alert('북마크에 추가되었습니다!');
 		}
+
 		setBookMarkList(updated);
 		localStorage.setItem('bookmarks', JSON.stringify(updated));
 	};
-
 	// 더보기 버튼
 	// 초기 아이템 6개만 보이기
 	const [item, setItem] = useState(6);
@@ -71,7 +75,7 @@ export default function NewsList({ news }: NewsListProps) {
 							</div>
 							<div>
 								<p className={styles.altName}>{article.source.name}</p>
-								<Link href={article.url} target="_blank">
+								<Link href={`/newsItem/${article.idx}?category=${category}`}>
 									<h2 className={styles.altTitle}>{article.title}</h2>
 								</Link>
 								<div className={styles.newsMeta}>
