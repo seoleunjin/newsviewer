@@ -3,14 +3,10 @@ import { vars } from '@/styles/globals.css';
 
 // 뉴스 리스트
 export const listGrid = style({
-	display: 'flex',
-	flexWrap: 'wrap',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(3, 1fr)',
 	gap: '60px 40px',
 	marginBottom: '96px',
-});
-
-export const itemGrid = style({
-	width: '31.3%',
 });
 
 export const imageWrap = style({
@@ -50,6 +46,7 @@ export const newsMetaDay = style({
 	fontSize: vars.sizes.FONT_SM,
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
+	letterSpacing: 0,
 });
 
 export const newsMetaBtn = style({

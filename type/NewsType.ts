@@ -12,6 +12,7 @@ export type Article = {
 	urlToImage: string;
 	publishedAt: string;
 	content: string;
+	id?: number;
 };
 
 export type NewsData = {

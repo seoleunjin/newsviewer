@@ -4,7 +4,7 @@ import '@/styles/globals.css';
 import * as styles from './layout.css';
 import * as theme from '@/styles/theme.css';
 import ThemeProvider from '@/context/ThemeProvider';
-import DarkModeBtn from '@/components/Buttons/DarkModeBtn';
+import DarkModeBtn from '@/components/buttons/DarkModeBtn';
 import BookmarkIcon from '@/public/images/bookMark.svg';
 
 type HeaderProps = {

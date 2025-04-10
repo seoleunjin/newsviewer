@@ -54,53 +54,51 @@ export default function NewsList({ news }: NewsListProps) {
 
 	return (
 		<div className={theme.sectionPaddingBottom}>
-			<div className={theme.width}>
-				<NewsTab></NewsTab>
-				<div>
-					<ul className={styles.listGrid}>
-						{news.slice(0, item).map(article => (
-							<li key={article.url} className={styles.itemGrid}>
-								<div className={styles.imageWrap}>
-									<Image
-										src={article.urlToImage || '/images/noImage.jpg'}
-										alt={article.title}
-										fill
-										style={{ objectFit: 'cover' }}
-										unoptimized
-										priority
-									/>
+			<NewsTab></NewsTab>
+			<div>
+				<ul className={styles.listGrid}>
+					{news.slice(0, item).map(article => (
+						<li key={article.url}>
+							<div className={styles.imageWrap}>
+								<Image
+									src={article.urlToImage || '/images/noImage.jpg'}
+									alt={article.title}
+									fill
+									style={{ objectFit: 'cover' }}
+									unoptimized
+									priority
+								/>
+							</div>
+							<div>
+								<p className={styles.altName}>{article.source.name}</p>
+								<Link href={article.url} target="_blank">
+									<h2 className={styles.altTitle}>{article.title}</h2>
+								</Link>
+								<div className={styles.newsMeta}>
+									<span className={styles.newsMetaDay}>
+										{dayjs(article.publishedAt).format('YYYY.MM.DD')}
+									</span>
+									<button onClick={() => handleBookmark(article)}>
+										<ItemBookMark
+											className={
+												bookmarkDup(article)
+													? styles.newsMetaBtnActive
+													: styles.newsMetaBtn
+											}
+										/>
+									</button>
 								</div>
-								<div>
-									<p className={styles.altName}>{article.source.name}</p>
-									<Link href={article.url} target="_blank">
-										<h2 className={styles.altTitle}>{article.title}</h2>
-									</Link>
-									<div className={styles.newsMeta}>
-										<span className={styles.newsMetaDay}>
-											{dayjs(article.publishedAt).format('YYYY.MM.DD')}
-										</span>
-										<button onClick={() => handleBookmark(article)}>
-											<ItemBookMark
-												className={
-													bookmarkDup(article)
-														? styles.newsMetaBtnActive
-														: styles.newsMetaBtn
-												}
-											/>
-										</button>
-									</div>
-								</div>
-							</li>
-						))}
-					</ul>
-					{item < news.length && (
-						<div className={styles.MoreBtnWrap}>
-							<button onClick={addArticle} className={styles.MoreBtn}>
-								더보기
-							</button>
-						</div>
-					)}
-				</div>
+							</div>
+						</li>
+					))}
+				</ul>
+				{item < news.length && (
+					<div className={styles.MoreBtnWrap}>
+						<button onClick={addArticle} className={styles.MoreBtn}>
+							더보기
+						</button>
+					</div>
+				)}
 			</div>
 		</div>
 	);
