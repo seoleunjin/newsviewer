@@ -7,6 +7,12 @@ export const width = style({
 	margin: '0 auto',
 });
 
+export const width800 = style({
+	width: '96%',
+	maxWidth: vars.width.narrow,
+	margin: '0 auto',
+});
+
 export const sectionSpacingY = style({
 	paddingTop: '187px',
 	paddingBottom: '120px',

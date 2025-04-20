@@ -1,4 +1,3 @@
-import * as theme from '@/styles/theme.css';
 import * as styles from './newsList.css';
 import type { Article } from '@/type/NewsType';
 import Image from 'next/image';
@@ -57,7 +56,7 @@ export default function NewsList({ news, category }: NewsListProps) {
 	};
 
 	return (
-		<div className={theme.sectionPaddingBottom}>
+		<div>
 			<NewsTab></NewsTab>
 			<div>
 				<ul className={styles.listGrid}>

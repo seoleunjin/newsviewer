@@ -21,4 +21,5 @@ export type NewsData = {
 	totalResults: number;
 	articles: Article[];
 	category: string;
+	query: string;
 };

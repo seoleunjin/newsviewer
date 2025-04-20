@@ -8,9 +8,15 @@ const instance = axios.create({
 });
 
 //특정 카테고리 뉴스 목록을 요청
-function fetchNewsLists(category: string) {
+// function fetchNewsLists(category: string) {
+// 	return instance.get<NewsData>(
+// 		`?country=us&category=${category}&apiKey=${apiKey}`,
+// 	);
+// }
+
+function fetchNewsLists(category: string, query: string) {
 	return instance.get<NewsData>(
-		`?country=us&category=${category}&apiKey=${apiKey}`,
+		`?country=us&category=${category}&q=${query}&apiKey=${apiKey}`,
 	);
 }
 

@@ -1,23 +1,12 @@
 import { fetchNewsLists } from '@/api';
+import ArticlePage from '@/components/detail/ArticlePage';
 import type { Article } from '@/type/NewsType';
 import { GetServerSidePropsContext } from 'next';
 
-export default function NewsItemPage({ article }: { article: Article | null }) {
-	if (!article) {
-		return <div>뉴스를 찾을 수 없습니다.</div>;
-	}
-
+export default function NewsItemPage({ article }: { article: Article }) {
 	return (
 		<div>
-			<h1>{article.title}</h1>
-			<p>{article.publishedAt}</p>
-			<p>{article.description}</p>
-			<h1>{article.title}</h1>
-			<p>{article.publishedAt}</p>
-			<p>{article.description}</p>
-			<h1>{article.title}</h1>
-			<p>{article.publishedAt}</p>
-			<p>{article.description}</p>
+			<ArticlePage article={article}></ArticlePage>
 		</div>
 	);
 }
@@ -25,12 +14,14 @@ export default function NewsItemPage({ article }: { article: Article | null }) {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const { id } = context.params as { id: string };
 	const rawCategory = context.query.category;
+	const rawQuery = context.query.q; // 또는 query, search 등
 
 	const category = Array.isArray(rawCategory)
 		? rawCategory[0]
 		: rawCategory || 'general';
+	const query = Array.isArray(rawQuery) ? rawQuery[0] : rawQuery || '';
 
-	const { data } = await fetchNewsLists(category);
+	const { data } = await fetchNewsLists(category, query);
 
 	const article = data.articles.find(
 		(item: Article) => item.publishedAt === id,
@@ -39,6 +30,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 	return {
 		props: {
 			article: article || null,
+			query: query,
 		},
 	};
 }
