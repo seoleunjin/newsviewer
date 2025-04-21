@@ -4,8 +4,8 @@ import '@/styles/globals.css';
 import * as styles from './layout.css';
 import * as theme from '@/styles/theme.css';
 import ThemeProvider from '@/context/ThemeProvider';
-import DarkModeBtn from '@/components/buttons/DarkModeBtn';
 import BookmarkIcon from '@/public/images/bookMark.svg';
+import DarkModeBtn from '@/components/Buttons/DarkModeBtn';
 
 type HeaderProps = {
 	children: React.ReactNode;
@@ -23,7 +23,7 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 							</h2>
 						</Link>
 						<nav className={styles.grid}>
-							<Link href="/bookmark">
+							<Link href="/bookMark">
 								<BookmarkIcon
 									className={styles.bookmark}
 									color="transparent"

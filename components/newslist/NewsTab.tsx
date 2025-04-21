@@ -18,18 +18,20 @@ export default function NewsTab() {
 	const currentCategory = router.query.category || 'general';
 
 	return (
-		<div className={styles.tabBtnWrap}>
-			{categories.map(category => {
-				const isActive = currentCategory === category;
-				return (
-					<Link
-						className={isActive ? styles.activeTabBtn : styles.tabBtn}
-						key={category}
-						href={`/?category=${category}`}>
-						{category}
-					</Link>
-				);
-			})}
+		<div className={styles.tabBtnBox}>
+			<div className={styles.tabBtnWrap}>
+				{categories.map(category => {
+					const isActive = currentCategory === category;
+					return (
+						<Link
+							className={isActive ? styles.activeTabBtn : styles.tabBtn}
+							key={category}
+							href={`/?category=${category}`}>
+							{category}
+						</Link>
+					);
+				})}
+			</div>
 		</div>
 	);
 }

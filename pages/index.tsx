@@ -7,7 +7,7 @@ import { GetServerSidePropsContext } from 'next';
 export default function Home({ news }: { news: NewsData }) {
 	return (
 		<div className={theme.width}>
-			<NewsVisual query={news.query} news={news.articles} />
+			<NewsVisual news={news} />
 		</div>
 	);
 }

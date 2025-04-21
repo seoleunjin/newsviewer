@@ -1,12 +1,25 @@
 import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/globals.css';
 
+export const tabBtnBox = style({
+	display: 'flex',
+	justifyContent: 'center',
+	marginBottom: '36px',
+});
+
 export const tabBtnWrap = style({
 	display: 'flex',
-	flexWrap: 'wrap',
-	justifyContent: 'center',
+	flexWrap: 'nowrap',
+	overflowX: 'auto',
+	whiteSpace: 'nowrap',
 	gap: '4px',
-	marginBottom: '36px',
+	WebkitOverflowScrolling: 'touch',
+	scrollbarWidth: 'none',
+	selectors: {
+		'&::-webkit-scrollbar': {
+			display: 'none',
+		},
+	},
 });
 
 export const tabBtn = style({
@@ -24,6 +37,13 @@ export const tabBtn = style({
 		'&:hover': {
 			background: vars.themeColor.color.tabBackground,
 			color: vars.colors.primary[200],
+		},
+	},
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			padding: '12px 14px',
+			fontSize: vars.sizes.FONT_XS,
 		},
 	},
 });

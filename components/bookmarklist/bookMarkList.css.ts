@@ -5,6 +5,13 @@ export const listGrid = style({
 	display: 'grid',
 	gridTemplateColumns: 'repeat(2, 1fr)',
 	gap: '40px',
+
+	'@media': {
+		'screen and (max-width: 1024px)': {
+			gridTemplateColumns: 'repeat(1, 1fr)',
+			gap: '20px',
+		},
+	},
 });
 
 export const itemGrid = style({
@@ -25,13 +32,18 @@ export const imageWrap = style({
 	position: 'relative',
 });
 
-export const altName = style({
+export const Name = style({
 	fontSize: vars.sizes.FONT_SM,
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });
 
-export const altTitle = style({
+export const Title = style({
 	fontSize: vars.sizes.FONT_MD,
 	lineHeight: '130%',
 	fontWeight: '700',
@@ -41,6 +53,11 @@ export const altTitle = style({
 	WebkitLineClamp: 2,
 	WebkitBoxOrient: 'vertical',
 	margin: '8px 0 16px 0',
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_RE,
+		},
+	},
 });
 
 export const newsMetaDay = style({
@@ -48,4 +65,9 @@ export const newsMetaDay = style({
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
 	letterSpacing: 0,
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });

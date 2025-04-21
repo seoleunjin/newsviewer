@@ -1,5 +1,5 @@
 import * as styles from './newsList.css';
-import type { Article } from '@/type/NewsType';
+import type { Article, NewsData } from '@/type/NewsType';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ItemBookMark from '@/public/images/itemBookMark.svg';
@@ -7,12 +7,8 @@ import NewsTab from './NewsTab';
 import Link from 'next/link';
 import dayjs from 'dayjs';
 
-type NewsListProps = {
-	news: Article[];
-	category: string;
-};
-
-export default function NewsList({ news, category }: NewsListProps) {
+export default function NewsList({ news }: { news: NewsData }) {
+	const { category, articles } = news;
 	const [bookMarkList, setBookMarkList] = useState<Article[]>([]);
 
 	// 북마크
@@ -60,42 +56,46 @@ export default function NewsList({ news, category }: NewsListProps) {
 			<NewsTab></NewsTab>
 			<div>
 				<ul className={styles.listGrid}>
-					{news.slice(0, item).map(article => (
-						<li key={article.url}>
-							<div className={styles.imageWrap}>
-								<Image
-									src={article.urlToImage || '/images/noImage.jpg'}
-									alt={article.title}
-									fill
-									style={{ objectFit: 'cover' }}
-									unoptimized
-									priority
-								/>
-							</div>
-							<div>
-								<p className={styles.altName}>{article.source.name}</p>
-								<Link href={`/newsItem/${article.idx}?category=${category}`}>
-									<h2 className={styles.altTitle}>{article.title}##</h2>
-								</Link>
-								<div className={styles.newsMeta}>
-									<span className={styles.newsMetaDay}>
-										{dayjs(article.publishedAt).format('YYYY.MM.DD')}
-									</span>
-									<button onClick={() => handleBookmark(article)}>
-										<ItemBookMark
-											className={
-												bookmarkDup(article)
-													? styles.newsMetaBtnActive
-													: styles.newsMetaBtn
-											}
-										/>
-									</button>
+					{articles.slice(0, item).map(article => {
+						const { url, urlToImage, title, publishedAt, source, idx } =
+							article; // 구조분해 할당
+						return (
+							<li key={url}>
+								<div className={styles.imageWrap}>
+									<Image
+										src={urlToImage || '/images/noImage.jpg'}
+										alt={title}
+										fill
+										style={{ objectFit: 'cover', objectPosition: 'top center' }}
+										unoptimized
+										priority
+									/>
 								</div>
-							</div>
-						</li>
-					))}
+								<div>
+									<p className={styles.Name}>{source.name}</p>
+									<Link href={`/newsItem/${idx}?category=${category}`}>
+										<h2 className={styles.Title}>{title}</h2>
+									</Link>
+									<div className={styles.newsMeta}>
+										<span className={styles.newsMetaDay}>
+											{dayjs(publishedAt).format('YYYY.MM.DD')}
+										</span>
+										<button onClick={() => handleBookmark(article)}>
+											<ItemBookMark
+												className={
+													bookmarkDup(article)
+														? styles.newsMetaBtnActive
+														: styles.newsMetaBtn
+												}
+											/>
+										</button>
+									</div>
+								</div>
+							</li>
+						);
+					})}
 				</ul>
-				{item < news.length && (
+				{item < articles.length && (
 					<div className={styles.MoreBtnWrap}>
 						<button onClick={addArticle} className={styles.MoreBtn}>
 							더보기

@@ -11,13 +11,25 @@ export const Title = style({
 	marginBottom: '24px',
 	marginTop: '12px',
 	fontWeight: '700',
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_LG,
+		},
+	},
 });
 
-export const altName = style({
+export const Name = style({
 	fontSize: vars.sizes.FONT_SM,
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
 	marginBottom: '12px',
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });
 
 export const articleContent = style({

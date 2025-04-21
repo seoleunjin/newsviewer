@@ -7,24 +7,48 @@ export const listGrid = style({
 	gridTemplateColumns: 'repeat(3, 1fr)',
 	gap: '60px 40px',
 	marginBottom: '96px',
+
+	'@media': {
+		'screen and (max-width: 1024px)': {
+			gridTemplateColumns: 'repeat(2, 1fr)',
+		},
+		'screen and (max-width: 768px)': {
+			marginBottom: '48px',
+		},
+		'screen and (max-width: 650px)': {
+			gridTemplateColumns: 'repeat(1, 1fr)',
+			gap: '30px 0',
+		},
+	},
 });
 
 export const imageWrap = style({
 	borderRadius: '16px',
-	height: '200px',
+	height: '250px',
 	overflow: 'hidden',
 	position: 'relative',
 	marginBottom: '24px',
+	'@media': {
+		'screen and (max-width: 650px)': {
+			height: '200px',
+		},
+	},
 });
 
-export const altName = style({
+export const Name = style({
 	fontSize: vars.sizes.FONT_SM,
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
 	marginBottom: '12px',
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });
 
-export const altTitle = style({
+export const Title = style({
 	fontSize: vars.sizes.FONT_MD,
 	lineHeight: '130%',
 	fontWeight: '700',
@@ -33,6 +57,12 @@ export const altTitle = style({
 	display: '-webkit-box',
 	WebkitLineClamp: 2,
 	WebkitBoxOrient: 'vertical',
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_RE,
+		},
+	},
 });
 
 export const newsMeta = style({
@@ -47,6 +77,11 @@ export const newsMetaDay = style({
 	color: vars.colors.neutral[100],
 	lineHeight: '100%',
 	letterSpacing: 0,
+	'@media': {
+		'screen and (max-width: 650px)': {
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });
 
 export const newsMetaBtn = style({
@@ -86,5 +121,13 @@ export const MoreBtn = style({
 		background: vars.colors.primary[200],
 		transition: 'all 0.2s ease',
 		color: vars.colors.neutral[0],
+	},
+
+	'@media': {
+		'screen and (max-width: 1024px)': {
+			':hover': {
+				background: vars.colors.neutral[200],
+			},
+		},
 	},
 });

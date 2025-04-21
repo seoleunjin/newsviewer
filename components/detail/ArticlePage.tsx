@@ -20,9 +20,9 @@ export default function ArticlePage({ article }: { article: Article }) {
 					priority
 				/>
 				<div className={styles.articleHeader}>
-					<span className={styles.altName}>{article.source.name}</span>
+					<span className={styles.Name}>{article.source.name}</span>
 					<h2 className={styles.Title}>{article.title}</h2>
-					<span className={styles.altName}>
+					<span className={styles.Name}>
 						{dayjs(article.publishedAt).format('YYYY.MM.DD')}
 					</span>
 				</div>

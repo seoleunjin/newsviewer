@@ -10,7 +10,6 @@ export default function BookMarkList() {
 
 	useEffect(() => {
 		const stored = localStorage.getItem('bookmarks');
-
 		if (stored) {
 			setBookMarkLists(JSON.parse(stored));
 		} else {
@@ -21,30 +20,33 @@ export default function BookMarkList() {
 	return (
 		<div>
 			<ul className={styles.listGrid}>
-				{bookMarkLists.map(bookMarkItem => (
-					<li key={bookMarkItem.url} className={styles.itemGrid}>
-						<div className={styles.contextWrap}>
-							<p className={styles.altName}>{bookMarkItem.source.name}</p>
-							<Link
-								href={`/newsItem/${bookMarkItem.idx}?category=${bookMarkItem.category}`}>
-								<h2 className={styles.altTitle}>{bookMarkItem.title}</h2>
-							</Link>
-							<span className={styles.newsMetaDay}>
-								{dayjs(bookMarkItem.publishedAt).format('YYYY.MM.DD')}
-							</span>
-						</div>
-						<div className={styles.imageWrap}>
-							<Image
-								src={bookMarkItem.urlToImage || '/images/noImage.jpg'}
-								alt={bookMarkItem.title}
-								fill
-								style={{ objectFit: 'cover' }}
-								unoptimized
-								priority
-							/>
-						</div>
-					</li>
-				))}
+				{bookMarkLists.map(bookMarkItem => {
+					const { url, source, title, publishedAt, urlToImage, idx, category } =
+						bookMarkItem; // 구조 분해 할당
+					return (
+						<li key={url} className={styles.itemGrid}>
+							<div className={styles.contextWrap}>
+								<p className={styles.Name}>{source.name}</p>
+								<Link href={`/newsItem/${idx}?category=${category}`}>
+									<h2 className={styles.Title}>{title}</h2>
+								</Link>
+								<span className={styles.newsMetaDay}>
+									{dayjs(publishedAt).format('YYYY.MM.DD')}
+								</span>
+							</div>
+							<div className={styles.imageWrap}>
+								<Image
+									src={urlToImage || '/images/noImage.jpg'}
+									alt={title}
+									fill
+									style={{ objectFit: 'cover' }}
+									unoptimized
+									priority
+								/>
+							</div>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);
