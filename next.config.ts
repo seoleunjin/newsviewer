@@ -5,7 +5,6 @@ const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
-	output: 'export',
 	images: {
 		domains: [
 			'cdn.mos.cms.futurecdn.net',
