@@ -70,7 +70,7 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 							<SearchIcon width={17} height={16} />
 						</button>
 					</form>
-					<p>{errorMessage}</p>
+					<p className={styles.errorMessage}>※ {errorMessage}</p>
 				</div>
 			</div>
 			<div className={theme.sectionPaddingBottom}>
