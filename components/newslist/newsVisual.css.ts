@@ -19,6 +19,12 @@ export const searchBarWrap = style({
 	alignItems: 'center',
 	flexDirection: 'column',
 	marginTop: '36px',
+
+	'@media': {
+		'screen and (max-width: 768px)': {
+			marginTop: '24px',
+		},
+	},
 });
 
 export const searchBar = style({
@@ -31,7 +37,7 @@ export const searchBar = style({
 	border: `1px solid ${vars.colors.neutral[100]}`,
 	'@media': {
 		'screen and (max-width: 650px)': {
-			padding: '12px 16px',
+			padding: '12px 14px',
 		},
 	},
 });

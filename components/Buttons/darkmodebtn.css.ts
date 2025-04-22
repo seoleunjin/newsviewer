@@ -14,4 +14,12 @@ export const modeIcon = style({
 			color: vars.colors.primary[200],
 		},
 	},
+
+	'@media': {
+		'screen and (max-width: 1024px)': {
+			':hover': {
+				color: vars.themeColor.color.mainFontColor,
+			},
+		},
+	},
 });

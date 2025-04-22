@@ -5,6 +5,12 @@ export const tabBtnBox = style({
 	display: 'flex',
 	justifyContent: 'center',
 	marginBottom: '36px',
+
+	'@media': {
+		'screen and (max-width: 768px)': {
+			marginBottom: '24px',
+		},
+	},
 });
 
 export const tabBtnWrap = style({
@@ -60,4 +66,11 @@ export const activeTabBtn = style({
 	boxSizing: 'border-box',
 	background: vars.themeColor.color.tabBackground,
 	color: vars.colors.primary[200],
+
+	'@media': {
+		'screen and (max-width: 650px)': {
+			padding: '12px 14px',
+			fontSize: vars.sizes.FONT_XS,
+		},
+	},
 });

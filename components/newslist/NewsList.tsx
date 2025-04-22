@@ -46,6 +46,10 @@ export default function NewsList({ news }: { news: NewsData }) {
 	// 초기 아이템 6개만 보이기
 	const [item, setItem] = useState(6);
 
+	useEffect(() => {
+		setItem(6);
+	}, [category]);
+
 	//버튼 클릭 시 6개씩 더 보이기
 	const addArticle = () => {
 		setItem(prev => prev + 6);
@@ -66,7 +70,7 @@ export default function NewsList({ news }: { news: NewsData }) {
 										src={urlToImage || '/images/noImage.jpg'}
 										alt={title}
 										fill
-										style={{ objectFit: 'cover', objectPosition: 'top center' }}
+										style={{ objectFit: 'cover', objectPosition: 'center' }}
 										unoptimized
 										priority
 									/>

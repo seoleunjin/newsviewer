@@ -17,7 +17,7 @@ export const listGrid = style({
 		},
 		'screen and (max-width: 650px)': {
 			gridTemplateColumns: 'repeat(1, 1fr)',
-			gap: '30px 0',
+			gap: '40px 0',
 		},
 	},
 });

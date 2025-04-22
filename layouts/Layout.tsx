@@ -5,7 +5,7 @@ import * as styles from './layout.css';
 import * as theme from '@/styles/theme.css';
 import ThemeProvider from '@/context/ThemeProvider';
 import BookmarkIcon from '@/public/images/bookMark.svg';
-import DarkModeBtn from '@/components/Buttons/DarkModeBtn';
+import DarkModeBtn from '@/components/buttons/DarkModeBtn';
 
 type HeaderProps = {
 	children: React.ReactNode;

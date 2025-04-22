@@ -9,7 +9,7 @@ export const listGrid = style({
 	'@media': {
 		'screen and (max-width: 1024px)': {
 			gridTemplateColumns: 'repeat(1, 1fr)',
-			gap: '20px',
+			gap: '40px',
 		},
 	},
 });
@@ -27,9 +27,17 @@ export const contextWrap = style({
 export const imageWrap = style({
 	width: '36%',
 	borderRadius: '8px',
-	height: '150px',
+	height: '160px',
 	overflow: 'hidden',
 	position: 'relative',
+	'@media': {
+		'screen and (max-width: 768px)': {
+			height: '120px',
+		},
+		'screen and (max-width: 650px)': {
+			height: '87px',
+		},
+	},
 });
 
 export const Name = style({
@@ -70,4 +78,9 @@ export const newsMetaDay = style({
 			fontSize: vars.sizes.FONT_XS,
 		},
 	},
+});
+
+export const emptyBookMark = style({
+	fontSize: vars.sizes.FONT_RE,
+	textAlign: 'center',
 });
