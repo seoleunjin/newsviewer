@@ -32,12 +32,13 @@ export const tabBtn = style({
 	cursor: 'pointer',
 	padding: '14px 16px',
 	display: 'inline-block',
-	borderRadius: '8px',
+	borderRadius: '4px',
 	fontSize: vars.sizes.FONT_SM,
 	letterSpacing: '0',
 	transition: 'all 0.2s ease-in',
 	boxSizing: 'border-box',
 	lineHeight: '100%',
+	fontWeight: '500',
 
 	selectors: {
 		'&:hover': {
@@ -58,7 +59,7 @@ export const activeTabBtn = style({
 	cursor: 'pointer',
 	padding: '14px 16px',
 	display: 'inline-block',
-	borderRadius: '8px',
+	borderRadius: '4px',
 	fontSize: vars.sizes.FONT_SM,
 	transition: 'all 0.2s ease-in',
 	letterSpacing: '0',
@@ -66,6 +67,7 @@ export const activeTabBtn = style({
 	boxSizing: 'border-box',
 	background: vars.themeColor.color.tabBackground,
 	color: vars.colors.primary[200],
+	fontWeight: '500',
 
 	'@media': {
 		'screen and (max-width: 650px)': {

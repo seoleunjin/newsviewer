@@ -93,7 +93,7 @@ globalStyle('body', {
 	fontSize: vars.sizes.FONT_RE,
 	letterSpacing: '-0.025em',
 	lineHeight: '120%',
-	fontWeight: '500',
+	fontWeight: '400',
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6', {
@@ -101,7 +101,7 @@ globalStyle('h1, h2, h3, h4, h5, h6', {
 	fontSize: vars.sizes.FONT_RE,
 	letterSpacing: '-0.025em',
 	lineHeight: '120%',
-	fontWeight: '500',
+	fontWeight: '400',
 });
 
 globalStyle(

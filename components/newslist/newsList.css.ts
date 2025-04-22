@@ -50,19 +50,12 @@ export const Name = style({
 
 export const Title = style({
 	fontSize: vars.sizes.FONT_MD,
-	lineHeight: '130%',
 	fontWeight: '700',
 	overflow: 'hidden',
 	textOverflow: 'ellipsis',
 	display: '-webkit-box',
 	WebkitLineClamp: 2,
 	WebkitBoxOrient: 'vertical',
-
-	'@media': {
-		'screen and (max-width: 650px)': {
-			fontSize: vars.sizes.FONT_RE,
-		},
-	},
 });
 
 export const newsMeta = style({

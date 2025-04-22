@@ -20,6 +20,11 @@ export const modeIcon = style({
 			':hover': {
 				color: vars.themeColor.color.mainFontColor,
 			},
+			selectors: {
+				'&.active': {
+					color: vars.colors.primary[200],
+				},
+			},
 		},
 	},
 });

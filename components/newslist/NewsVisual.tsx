@@ -67,7 +67,7 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 							placeholder="검색어를 입력해 주세요."
 						/>
 						<button type="submit" className={styles.searchIcon}>
-							<SearchIcon width={24} height={22} />
+							<SearchIcon width={17} height={16} />
 						</button>
 					</form>
 					<p>{errorMessage}</p>
