@@ -6,12 +6,16 @@ import * as theme from '@/styles/theme.css';
 import ThemeProvider from '@/context/ThemeProvider';
 import BookmarkIcon from '@/public/images/bookMark.svg';
 import DarkModeBtn from '@/components/buttons/DarkModeBtn';
+import { usePathname } from 'next/navigation';
 
 type HeaderProps = {
 	children: React.ReactNode;
 };
 
 const Layout: React.FC<HeaderProps> = ({ children }) => {
+	const pathname = usePathname();
+	const isBookMarkActive = pathname === '/bookMark';
+
 	return (
 		<ThemeProvider>
 			<header className={styles.header}>
@@ -25,7 +29,7 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 						<nav className={styles.grid}>
 							<Link href="/bookMark">
 								<BookmarkIcon
-									className={styles.bookmark}
+									className={`${styles.bookmark} ${isBookMarkActive ? styles.bookMarkActive : styles.bookmark}`}
 									color="transparent"
 									width={16}
 									height={21}

@@ -36,6 +36,10 @@ export const bookmark = style({
 	},
 });
 
+export const bookMarkActive = style({
+	color: vars.colors.primary[200],
+});
+
 // 푸터
 export const footer = style({
 	padding: '40px 0',

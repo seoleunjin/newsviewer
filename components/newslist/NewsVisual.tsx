@@ -24,7 +24,7 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 
 		setErrorMessage('');
 		if (includesHangul(newValue)) {
-			setErrorMessage('한글은 입력할 수 없습니다.');
+			setErrorMessage('※ 한글은 입력할 수 없습니다.');
 		} else {
 			setErrorMessage('');
 		}
@@ -34,12 +34,12 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 		e.preventDefault();
 
 		if (includesHangul(value)) {
-			setErrorMessage('한글은 입력할 수 없습니다.');
+			setErrorMessage('※ 한글은 입력할 수 없습니다.');
 			setFilteredNews(news);
 		}
 
 		if (value === '') {
-			setErrorMessage('검색어를 작성해주세요.');
+			setErrorMessage('※ 검색어를 작성해주세요.');
 			setFilteredNews(news);
 			return;
 		}
@@ -53,7 +53,7 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 
 	return (
 		<div>
-			<div className={theme.sectionSpacingY}>
+			<div className={theme.visualSpacingY}>
 				<h2 className={styles.Title}>
 					당신을 위한 빠른 뉴스 요약 <br /> 세상의 소식을 한눈에
 				</h2>
@@ -70,7 +70,7 @@ export default function NewsVisual({ news }: { news: NewsData }) {
 							<SearchIcon width={17} height={16} />
 						</button>
 					</form>
-					<p className={styles.errorMessage}>※ {errorMessage}</p>
+					<p className={styles.errorMessage}> {errorMessage}</p>
 				</div>
 			</div>
 			<div className={theme.sectionPaddingBottom}>

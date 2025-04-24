@@ -62,7 +62,7 @@ export default function NewsList({ news }: { news: NewsData }) {
 				<ul className={styles.listGrid}>
 					{articles.slice(0, item).map(article => {
 						const { url, urlToImage, title, publishedAt, source, idx } =
-							article; // 구조분해 할당
+							article; // 디스트럭처링링
 						return (
 							<li key={url}>
 								<div className={styles.imageWrap}>

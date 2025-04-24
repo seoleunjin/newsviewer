@@ -24,6 +24,17 @@ export const sectionSpacingY = style({
 	},
 });
 
+export const visualSpacingY = style({
+	paddingTop: '187px',
+	paddingBottom: '72px',
+	'@media': {
+		'screen and (max-width: 768px)': {
+			paddingTop: '127px',
+			paddingBottom: '48px',
+		},
+	},
+});
+
 export const sectionPaddingBottom = style({
 	paddingBottom: '120px',
 	'@media': {
