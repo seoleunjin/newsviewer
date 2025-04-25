@@ -5,7 +5,7 @@ import * as styles from './layout.css';
 import * as theme from '@/styles/theme.css';
 import ThemeProvider from '@/context/ThemeProvider';
 import BookmarkIcon from '@/public/images/bookMark.svg';
-import DarkModeBtn from '@/components/buttons/DarkModeBtn';
+import DarkModeBtn from '@/components/modeButton/DarkModeBtn';
 import { usePathname } from 'next/navigation';
 
 type HeaderProps = {
