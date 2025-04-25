@@ -1,5 +1,5 @@
 import { fetchNewsLists } from '@/api';
-import NewsVisual from '@/components/newslist/NewsVisual';
+import NewsVisual from '@/components/newsVisual/NewsVisual';
 import * as theme from '@/styles/theme.css';
 import type { Article, NewsData } from '@/type/NewsType';
 import { GetServerSidePropsContext } from 'next';

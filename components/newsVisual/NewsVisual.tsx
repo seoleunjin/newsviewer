@@ -1,7 +1,7 @@
 import * as theme from '@/styles/theme.css';
 import * as styles from './newsVisual.css';
 import { useEffect, useState } from 'react';
-import NewsList from '@/components/newslist/NewsList';
+import NewsList from '@/components/newsSection/newsList/NewsList';
 import { NewsData } from '@/type/NewsType';
 import SearchIcon from '@/public/images/search.svg';
 

@@ -35,7 +35,7 @@ export default function BookMarkList() {
 							urlToImage,
 							idx,
 							category,
-						} = bookMarkItem; // 구조 분해 할당
+						} = bookMarkItem;
 						return (
 							<li key={url} className={styles.itemGrid}>
 								<div className={styles.contextWrap}>
