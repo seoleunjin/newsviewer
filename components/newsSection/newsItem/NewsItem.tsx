@@ -47,12 +47,12 @@ export default function NewsItem({
 		setBookMarkList(updated);
 		localStorage.setItem('bookmarks', JSON.stringify(updated));
 	};
-
 	return (
 		<div>
 			<ul className={styles.listGrid}>
 				{articles.slice(0, item).map(article => {
-					const { url, urlToImage, title, publishedAt, source, idx } = article; // 디스트럭처링링
+					const { url, urlToImage, title, publishedAt, source, idx } = article;
+
 					return (
 						<li key={url}>
 							<div className={styles.imageWrap}>
@@ -61,7 +61,8 @@ export default function NewsItem({
 									alt={title}
 									fill
 									style={{ objectFit: 'cover', objectPosition: 'center' }}
-									unoptimized
+									sizes="(max-width: 732px) 90vw, (max-width: 992px) 50vw, 453px"
+									// unoptimized
 									priority
 								/>
 							</div>

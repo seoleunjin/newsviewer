@@ -6,13 +6,11 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: [
-			'cdn.mos.cms.futurecdn.net',
-			'media.zennfs.com',
-			'image.cnbcfm.com',
-			's3.amazonaws.com',
-			'assets2.cbsnewsstatic.com',
-			'cdn.cnn.com',
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: '**',
+			},
 		],
 	},
 	webpack(config) {
