@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -16,11 +17,19 @@ const nextConfig: NextConfig = {
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
-			issuer: /\.[ts]sx?$/,
+			issuer: /\.[jt]sx?$/,
 			use: ['@svgr/webpack'],
 		});
 		return config;
 	},
 };
 
-export default withVanillaExtract(nextConfig);
+// 플러그인 합성
+const withPlugins = (config: NextConfig) =>
+	withVanillaExtract(
+		withBundleAnalyzer({
+			enabled: process.env.ANALYZE === 'true',
+		})(config),
+	);
+
+export default withPlugins(nextConfig);
