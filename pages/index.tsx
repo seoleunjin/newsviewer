@@ -44,7 +44,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 		};
 	} catch (error) {
 		console.error('뉴스 불러오기 실패:', error);
-		// 예외 처리 후 404 페이지를 반환하도록 수정
 		return {
 			notFound: true,
 		};

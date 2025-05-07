@@ -31,15 +31,12 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 							</h2>
 						</Link>
 						<nav className={styles.grid}>
-							<Link
-								href="/bookMark"
-								aria-label={isBookMarkActive ? '북마크 해제' : '북마크 추가'}>
+							<Link href="/bookMark" aria-label="북마크 페이지">
 								<BookmarkIcon
 									className={`${styles.bookmark} ${isBookMarkActive ? styles.bookMarkActive : styles.bookmark}`}
 									color="transparent"
 									width={16}
 									height={21}
-									aria-pressed={isBookMarkActive ? 'true' : 'false'}
 								/>
 							</Link>
 							<DarkModeBtn />
