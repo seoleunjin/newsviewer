@@ -15,7 +15,7 @@ const DarkModeBtn = () => {
 		<div>
 			<button
 				onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-				aria-label="DarkModeBtn">
+				aria-label="다크모드 버튼">
 				<DarkModeIcon
 					className={`${styles.modeIcon} ${resolvedTheme === 'dark' ? 'active' : ''}`}
 				/>

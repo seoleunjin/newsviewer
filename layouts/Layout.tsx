@@ -7,6 +7,7 @@ import ThemeProvider from '@/context/ThemeProvider';
 import BookmarkIcon from '@/public/images/bookMark.svg';
 import DarkModeBtn from '@/components/modeButton/DarkModeBtn';
 import { usePathname } from 'next/navigation';
+import Head from 'next/head';
 
 type HeaderProps = {
 	children: React.ReactNode;
@@ -18,6 +19,9 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 
 	return (
 		<ThemeProvider>
+			<Head>
+				<title>Newsly</title>
+			</Head>
 			<header className={styles.header}>
 				<div className={theme.width}>
 					<div className={styles.grid}>
@@ -27,12 +31,15 @@ const Layout: React.FC<HeaderProps> = ({ children }) => {
 							</h2>
 						</Link>
 						<nav className={styles.grid}>
-							<Link href="/bookMark">
+							<Link
+								href="/bookMark"
+								aria-label={isBookMarkActive ? '북마크 해제' : '북마크 추가'}>
 								<BookmarkIcon
 									className={`${styles.bookmark} ${isBookMarkActive ? styles.bookMarkActive : styles.bookmark}`}
 									color="transparent"
 									width={16}
 									height={21}
+									aria-pressed={isBookMarkActive ? 'true' : 'false'}
 								/>
 							</Link>
 							<DarkModeBtn />

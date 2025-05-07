@@ -62,7 +62,6 @@ export default function NewsItem({
 									fill
 									style={{ objectFit: 'cover', objectPosition: 'center' }}
 									sizes="(max-width: 732px) 90vw, (max-width: 992px) 50vw, 453px"
-									// unoptimized
 									priority
 								/>
 							</div>
@@ -75,7 +74,9 @@ export default function NewsItem({
 									<span className={styles.newsMetaDay}>
 										{dayjs(publishedAt).format('YYYY.MM.DD')}
 									</span>
-									<button onClick={() => handleBookmark(article)}>
+									<button
+										onClick={() => handleBookmark(article)}
+										aria-label="북마크">
 										<ItemBookMark
 											className={
 												bookmarkDup(article)
