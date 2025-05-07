@@ -62,7 +62,7 @@ export default function NewsItem({
 									fill
 									style={{ objectFit: 'cover', objectPosition: 'center' }}
 									sizes="(max-width: 732px) 90vw, (max-width: 992px) 50vw, 453px"
-									priority
+									// priority
 								/>
 							</div>
 							<div>
